@@ -2,22 +2,33 @@ const mongoose = require("mongoose");
 
 const JobPosting = mongoose.model("JobPosting");
 
-exports.browseAll = (req, res) => {
+exports.browseAll = async (req, res) => {
+    try {
+        let allJobs = await JobPosting.find({
+            isActive: true
+        }, (err, jobs) => {
+            return jobs
+        }).sort({
+            createdDate: -1
+        });
     
-    JobPosting.find({
-        isActive: true
-    }, (err, jobs) => {
         res.render("browseJobs", {
             title: "Browse jobs",
-            jobs: jobs,
+            jobs: allJobs,
         });
-    });
+    } catch (err) {
+        res.render("error", err);
+    }
 }
 
 exports.createJob = (req, res) => {
-    res.render("createJob", {
-        title: "Create job",
-    });
+    try {
+        res.render("createJob", {
+            title: "Create job",
+        });
+    } catch (err) => {
+        res.render("error", err);
+    }
 }
 
 exports.createJobEntry = async (req, res) => {
@@ -30,11 +41,17 @@ exports.createJobEntry = async (req, res) => {
     }
 }
 
-exports.viewSingleJob = (req, res) => {
-    JobPosting.findById(req.params.jobId, (err, job) => {
+exports.viewSingleJob = async (req, res) => {
+    try {
+        let jobToView = await JobPosting.findById(req.params.jobId, (err, job) => {
+            return job;
+        });
+        
         res.render("singleJob", {
             title: "Single job",
-            jobDetails: job
+            jobDetails: jobToView
         })
-    })
+    } catch (err) {
+        res.render("error", err);
+    }
 }
