@@ -1,9 +1,10 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const jobsController = require("../controllers/jobsController");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', jobsController.browseAll);
+// router.get('/create', jobsController.createJob);
+// router.post('/create', jobsController.createJobEntry);
 
 module.exports = router;
