@@ -26,7 +26,7 @@ exports.createJob = (req, res) => {
         res.render("createJob", {
             title: "Create job",
         });
-    } catch (err) => {
+    } catch (err) {
         res.render("error", err);
     }
 }
