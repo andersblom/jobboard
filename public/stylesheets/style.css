@@ -1,10 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Lora|Roboto");
+header .logo {
+  font-family: 'Lora', Lora, serif;
+  -webkit-font-smoothing: antialiased; }
+
+header ul li a {
+  font-family: 'Roboto', Roboto, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
 body {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  background-color: #EEEFF4; }
 
 header {
-  background-color: #00B7FF;
-  height: 50px;
+  background-color: #33363E;
+  height: 70px;
   width: 100%;
   padding-left: 20px;
   padding-right: 20px;
@@ -16,6 +26,32 @@ header {
   justify-content: space-between;
   align-items: center; }
   header .logo {
-    color: #000000; }
+    font-style: italic;
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 1em; }
+    header .logo a {
+      color: #FFFFFF;
+      text-decoration: none; }
+    header .logo .fade {
+      color: #8EA3B6; }
+  header ul {
+    list-style-type: none; }
+    header ul li a {
+      color: #FFFFFF;
+      padding: 1em;
+      text-decoration: none;
+      font-weight: 300; }
+      header ul li a:hover {
+        color: #FF9F46; }
+
+h1 {
+  margin-top: 0px; }
+
+section.content {
+  background-color: #FFFFFF;
+  padding: 4em;
+  height: auto;
+  min-height: 100%; }
 
 /*# sourceMappingURL=style.css.map */

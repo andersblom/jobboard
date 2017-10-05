@@ -5,12 +5,18 @@ html
 		link(rel='stylesheet', href='/stylesheets/style.css')
 	body
 		header
-			.logo jobby
+			.logo 
+				a(href="/")
+					span job
+					span.fade by
 			nav
 				ul
 					li
 						a(href="/") View jobs
 						a(href="/create") Post a job
-		block content
+						
+		section.content
+			block content
+
 		footer
 			p Hello from the footer

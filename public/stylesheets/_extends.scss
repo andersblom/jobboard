@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Lora|Roboto');
+
+%font-stack-serif {
+    font-family: 'Lora', Lora, serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+%font-stack-sans {
+    font-family: 'Roboto', Roboto, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}

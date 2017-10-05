@@ -1,11 +1,12 @@
 body {
     padding: 0;
     margin: 0;
+    background-color: $brightBackground;
 }
 
 header {
-    background-color: #00B7FF;
-    height: 50px;
+    background-color: $darkBackground;
+    height: 70px;
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
@@ -20,6 +21,47 @@ header {
     align-items: center;
 
 	.logo {
-        color: $black;
+        @extend %font-stack-serif;
+        font-style: italic;
+        font-weight: bold;
+        font-size: 24px;
+        margin-left: 1em;
+        
+        a {
+            color: $white;
+            text-decoration: none;
+        }
+        .fade {
+            color: $logoHighlight;
+        }
     }
+
+    ul {
+        list-style-type: none;
+
+        li {
+            a {
+                color: $white;
+                padding: 1em;
+                text-decoration: none;
+                @extend %font-stack-sans;
+                font-weight: 300;
+
+                &:hover {
+                    color: $highlight;
+                }
+            }
+        }
+    }
+}
+
+h1 {
+    margin-top: 0px;
+}
+
+section.content {
+    background-color: $white;
+    padding: 4em;
+    height: auto;
+    min-height: 100%;
 }

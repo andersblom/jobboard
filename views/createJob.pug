@@ -1,5 +1,35 @@
 extends layout
 
 block content
-  h1= title
-  p Create a job
+	h1= title
+	form(action="/create", method="POST")
+		label(for="title") Title
+			input(type="text" name="title" placeholder='"Super awesome developer"')
+		
+		label(for="body") Job post content
+			textarea(name="body" placeholder='"Howdy cap\'n. \n Do you know NodeJS \'n stuff? \n Cool! Come work for us. Please."')
+		
+		- const fields = ["Developer", "Designer", "Copywriter"]
+		ul.fields
+			each field in fields
+				.field
+					input(type="checkbox", id=field, value=field, name="jobField")
+					label(for=field) #{field} 
+		
+		label(for="company") Company name
+			input(type="text" name="company" placeholder='"Pied Piper"')
+		
+		label(for="city") City
+			input(type="text" name="city" placeholder='"Silicon Valley"')
+		
+		label(for="country") Country
+			input(type="text" name="country" placeholder='"United States"')
+			
+		label(for="expiryDate") Expiry date
+			input(type="date" name="expiryDate")
+		
+		label(for="isActive") Activate job posting?
+			input(type="checkbox" name="isActive" value="yes")
+			label(for="yes") Yes/no
+
+		input(type="submit" value="Let's go!")
