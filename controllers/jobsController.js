@@ -4,7 +4,9 @@ const JobPosting = mongoose.model("JobPosting");
 
 exports.browseAll = (req, res) => {
     
-    JobPosting.find({}, (err, jobs) => {
+    JobPosting.find({
+        isActive: true
+    }, (err, jobs) => {
         res.render("browseJobs", {
             title: "Browse jobs",
             jobs: jobs,

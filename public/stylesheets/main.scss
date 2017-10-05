@@ -60,8 +60,12 @@ h1 {
 }
 
 section.content {
-    background-color: $white;
     padding: 4em;
     height: auto;
     min-height: 100%;
+}
+
+.job--entry {
+    background: $white;
+    margin-bottom: 2em;
 }

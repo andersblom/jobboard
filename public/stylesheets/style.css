@@ -49,9 +49,12 @@ h1 {
   margin-top: 0px; }
 
 section.content {
-  background-color: #FFFFFF;
   padding: 4em;
   height: auto;
   min-height: 100%; }
+
+.job--entry {
+  background: #FFFFFF;
+  margin-bottom: 2em; }
 
 /*# sourceMappingURL=style.css.map */

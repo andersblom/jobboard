@@ -25,11 +25,11 @@ app.set('view engine', 'pug');
 mongoose.connect(process.env.DATABASE);
 mongoose.Promise = global.Promise;
 mongoose.connection.on("error", err => {
-  console.error(`🚫 Mongoose connection error:`);
+  console.error(`🖥 🚫 Mongoose connection error:`);
   console.error(err.message);
 });
 mongoose.connection.on("open", conn => {
-  console.log("👏  🖥  Mongoose connection running!");
+  console.log("🖥 ✅  Mongoose connection running!");
 })
 
 // Sessions allow us to store data on visitors from request to request

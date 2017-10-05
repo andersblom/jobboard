@@ -6,4 +6,9 @@ block content
 
 	each job in jobs
 		.job--entry
-			a(href=`/job/${job._id}`)= job.title
+			.title= job.title
+			.company #{job.company}, #{job.city}, #{job.country}
+			.field #{job.jobField}
+			.created Posted #{job.createdDate}
+			.expiry Deadline #{job.expiryDate}
+			a(href=`/job/${job._id}`).jobLink
