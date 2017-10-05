@@ -4,11 +4,12 @@ block content
 	h1= title
 	p Let's browse some jobs!
 
-	each job in jobs
-		.job--entry
-			.title= job.title
-			.company #{job.company}, #{job.city}, #{job.country}
-			.field #{job.jobField}
-			.created Posted #{job.createdDate}
-			.expiry Deadline #{job.expiryDate}
-			a(href=`/job/${job._id}`).jobLink
+	.job-grid 
+		each job in jobs
+			.job--entry
+				a(href=`/job/${job._id}`).jobLink
+				.title= job.title
+				.company #{job.company}, #{job.city}, #{job.country}
+				//- .created Posted #{job.createdDate}
+				.expiry Deadline #{job.expiryDate}
+				.tags Tags: #{job.jobField}

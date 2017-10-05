@@ -29,4 +29,7 @@ node_modules
 # Debug log from npm
 npm-debug.log
 
+# Project specifics
 *.env
+public/stylesheets/style.css
+public/stylesheets/style.css.map
