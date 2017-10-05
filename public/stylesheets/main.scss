@@ -166,6 +166,75 @@ section.content {
     box-shadow: 0px 6px 15px 0px rgba($black, 0.3);
 }
 
+.createJobContainer {
+    form {
+        display: flex;
+        flex-direction: column;
+
+        > div {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2em;
+            @extend %font-stack-sans;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        .headLabel {
+            display: block;
+            margin-bottom: 0.8em;
+        }
+
+        input[type=text], textarea, input[type=date] {
+            background-color: $white;
+            box-shadow: none;
+            padding: 1em;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        input[type=checkbox] {
+            margin-right: 1em;
+        }
+
+        .fields {
+            padding-left: 0;
+        }
+
+        textarea {
+            height: 40vh;
+        }
+
+        .submit {
+            text-align: center;
+
+            input[type=submit] {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                padding: 1.1em 3em 1.1em 3em;
+                color: $white;
+                background-color: $darkBlue;
+                border: 0;
+                box-shadow: none;
+                border-radius: 4px;
+                font-size: 17px;
+                @extend %font-stack-sans;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                cursor: pointer;
+                transition: background 200ms ease-in-out, color 200ms ease-in-out;
+
+                &:hover {
+                    background-color: $darkBlueFaded;
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
 footer {
     .copyright {
         padding: 2em;

@@ -1,35 +1,44 @@
 extends layout
 
 block content
-	h1= title
-	form(action="/create", method="POST")
-		label(for="title") Title
-			input(type="text" name="title" placeholder='"Super awesome developer"')
-		
-		label(for="body") Job post content
-			textarea(name="body" placeholder='"Howdy cap\'n. \n Do you know NodeJS \'n stuff? \n Cool! Come work for us. Please."')
-		
-		- const fields = ["Developer", "Designer", "Copywriter"]
-		ul.fields
-			each field in fields
-				.field
-					input(type="checkbox", id=field, value=field, name="jobField")
-					label(for=field) #{field} 
-		
-		label(for="company") Company name
-			input(type="text" name="company" placeholder='"Pied Piper"')
-		
-		label(for="city") City
-			input(type="text" name="city" placeholder='"Silicon Valley"')
-		
-		label(for="country") Country
-			input(type="text" name="country" placeholder='"United States"')
+	h1.pageTitle= title
+	.createJobContainer
+		form(action="/create", method="POST")
+			.title
+				label(for="title").headLabel Title
+				input(type="text" name="title" placeholder='"Super awesome developer"')
+			.body
+				label(for="body").headLabel Job post content
+				textarea(name="body" placeholder='"Howdy cap\'n. \n Do you know NodeJS \'n stuff? \n Cool! Come work for us. Please."')
+			.jobtype
+				label(for="jobField").headLabel Job type
+				- const fields = ["Developer", "Designer", "Copywriter"]
+				ul.fields
+					each field in fields
+						.field
+							input(type="checkbox", id=field, value=field, name="jobField")
+							label(for=field) #{field} 
 			
-		label(for="expiryDate") Expiry date
-			input(type="date" name="expiryDate")
-		
-		label(for="isActive") Activate job posting?
-			input(type="checkbox" name="isActive" value="yes")
-			label(for="yes") Yes/no
+			.company
+				label(for="company").headLabel Company name
+				input(type="text" name="company" placeholder='"Pied Piper"')
+			
+			.city
+				label(for="city").headLabel City
+				input(type="text" name="city" placeholder='"Silicon Valley"')
+			
+			.country
+				label(for="country").headLabel Country
+				input(type="text" name="country" placeholder='"United States"')
+				
+			.expirydate
+				label(for="expiryDate").headLabel Expiry date
+				input(type="date" name="expiryDate")
+			
+			.activate
+				label(for="isActive").headLabel Activate job posting now?
+				input(type="checkbox" name="isActive" value="yes")
+				label(for="yes") Yes / no
 
-		input(type="submit" value="Let's go!")
+			.submit
+				input(type="submit" value="Let's go!")
