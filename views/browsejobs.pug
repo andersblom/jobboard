@@ -1,5 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Let's browse some jobs!
+	h1= title
+	p Let's browse some jobs!
+
+	each job in jobs
+		.job--entry
+			a(href=`/job/${job._id}`)= job.title

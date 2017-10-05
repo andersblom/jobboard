@@ -3,8 +3,12 @@ const mongoose = require("mongoose");
 const JobPosting = mongoose.model("JobPosting");
 
 exports.browseAll = (req, res) => {
-    res.render("browseJobs", {
-        title: "Browse jobs",
+    
+    JobPosting.find({}, (err, jobs) => {
+        res.render("browseJobs", {
+            title: "Browse jobs",
+            jobs: jobs,
+        });
     });
 }
 
@@ -25,8 +29,10 @@ exports.createJobEntry = async (req, res) => {
 }
 
 exports.viewSingleJob = (req, res) => {
-    console.log(res.locals.flashes);
-    res.render("singleJob", {
-        title: "Single job"
+    JobPosting.findById(req.params.jobId, (err, job) => {
+        res.render("singleJob", {
+            title: "Single job",
+            jobDetails: job
+        })
     })
 }
