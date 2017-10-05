@@ -1,7 +1,16 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		header
+			.logo jobby
+			nav
+				ul
+					li
+						a(href="/") View jobs
+						a(href="/create") Post a job
+		block content
+		footer
+			p Hello from the footer

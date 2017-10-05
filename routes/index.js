@@ -4,7 +4,7 @@ const jobsController = require("../controllers/jobsController");
 
 /* GET home page. */
 router.get('/', jobsController.browseAll);
-// router.get('/create', jobsController.createJob);
+router.get('/create', jobsController.createJob);
 // router.post('/create', jobsController.createJobEntry);
 
 module.exports = router;
