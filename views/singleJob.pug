@@ -14,7 +14,7 @@ block content
 	.singleJobContainer
 		.singleJobContent
 			.location @ #{jobDetails.city}, #{jobDetails.country}
-			p= jobDetails.body
+			p!= jobDetails.body
 		.singleJobSidebar
 			.created 
 				| Job posted on 
