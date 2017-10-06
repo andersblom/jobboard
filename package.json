@@ -17,10 +17,12 @@
     "mongoose": "^4.12.0",
     "node-sass-middleware": "0.9.8",
     "pug": "~2.0.0-beta11",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "simplemde": "^1.11.2"
   },
   "devDependencies": {
     "morgan": "^1.8.2",
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.12.1",
+    "webpack": "^3.6.0"
   }
 }
