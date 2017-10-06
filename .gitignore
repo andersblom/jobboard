@@ -33,3 +33,4 @@ npm-debug.log
 *.env
 public/stylesheets/style.css
 public/stylesheets/style.css.map
+public/javascripts/bundle.js
