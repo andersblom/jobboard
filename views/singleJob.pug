@@ -7,14 +7,13 @@ block content
 			| This job is listed as inactive. Maybe #{jobDetails.company} already found their new girl/guy!
 			br
 			a(href="/").browseJobs Browse active jobs here
-	else 
-		null
 
 	h1.pageTitle= jobDetails.title
 	.singleJobContainer
 		.singleJobContent
 			.location @ #{jobDetails.city}, #{jobDetails.country}
-			p!= jobDetails.body
+			.body
+				!= md(jobDetails.body)
 		.singleJobSidebar
 			.created 
 				| Job posted on 

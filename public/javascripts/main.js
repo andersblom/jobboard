@@ -1,4 +1,5 @@
 var SimpleMDE = require("SimpleMDE");
+
 var entries = document.getElementsByClassName("job--entry");
 
 for (i = 0; i < entries.length; i++) {
