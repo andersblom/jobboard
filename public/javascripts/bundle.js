@@ -11096,6 +11096,7 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 var SimpleMDE = __webpack_require__(6);
+
 var entries = document.getElementsByClassName("job--entry");
 
 for (i = 0; i < entries.length; i++) {
