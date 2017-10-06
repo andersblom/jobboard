@@ -1,5 +1,30 @@
 extends layout
-
 block content
-  h1= jobDetails.title
-  p= jobDetails.body
+	.singleJobField #{jobDetails.jobField}
+	h1.pageTitle= jobDetails.title
+	.singleJobContainer
+		.singleJobContent
+			.location @ #{jobDetails.city}, #{jobDetails.country}
+			p= jobDetails.body
+		.singleJobSidebar
+			.created 
+				| Job posted on 
+				br
+				| #{jobDetails.createdDate}
+			.company #{jobDetails.company}
+			.deadline 
+				| Apply before it's too late: 
+				br
+				| #{jobDetails.expiryDate} 	
+
+	//- { _id: 59d677e2db51d44b29679821,
+	//- title: 'React developer for awesomesauce stuff',
+	//- body: 'Hi there. \r\n\r\nDo you know React? Sweet. Please apply now.',
+	//- jobField: 'Developer,Copywriter',
+	//- company: 'Pied Piper',
+	//- city: 'Silicon Valley',
+	//- country: 'United States',
+	//- expiryDate: 2017-10-19T00:00:00.000Z,
+	//- __v: 0,
+	//- isActive: true,
+	//- createdDate: 2017-10-05T18:20:18.562Z }
