@@ -13,5 +13,3 @@ for (i = 0; i < entries.length; i++) {
 
 var simplemde = new SimpleMDE({ element: document.getElementById("jobBody") });
 simplemde.value('"Howdy cap\'n. \n Do you know NodeJS \'n stuff? \n Cool! Come work for us. Please."');
-
-console.log(SimpleMDE);
