@@ -30,4 +30,13 @@ const jobPostingSchema = new mongoose.Schema({
     }
 });
 
+jobPostingSchema.pre("save", function(next) {
+    // String replacement: line breaks getting swapped out to <br />'s 
+     let newBody = (this.body + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + "<br />" + '$2');
+    
+     // Sending the new string with <br />'s back 
+     this.body = newBody;
+     next();
+});
+
 module.exports = mongoose.model("JobPosting", jobPostingSchema);
