@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const md = require("node-markdown").Markdown;
 
 const JobPosting = mongoose.model("JobPosting");
 
@@ -49,7 +50,8 @@ exports.viewSingleJob = async (req, res) => {
         
         res.render("singleJob", {
             title: "Single job",
-            jobDetails: jobToView
+            jobDetails: jobToView,
+            md: md
         })
     } catch (err) {
         res.render("error", err);
