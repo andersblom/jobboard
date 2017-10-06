@@ -279,6 +279,23 @@ section.content {
     }
 }
 
+.inactiveDisclaimer {
+    margin: 1em 0 1em 0;
+    background-color: rgb(196, 54, 54);
+    padding: 1em 2em 1em 2em;
+
+    @extend %font-stack-sans;
+    font-size: 16px;
+    font-weight: 400;
+    color: $white;
+
+    border-radius: 3px;
+
+    .browseJobs {
+        color: $white;
+    }
+}
+
 footer {
     .copyright {
         padding: 2em;

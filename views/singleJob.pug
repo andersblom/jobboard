@@ -1,6 +1,15 @@
 extends layout
 block content
 	.singleJobField #{jobDetails.jobField}
+
+	if !jobDetails.isActive
+		.inactiveDisclaimer 
+			| This job is listed as inactive. Maybe #{jobDetails.company} already found their new girl/guy!
+			br
+			a(href="/").browseJobs Browse active jobs here
+	else 
+		null
+
 	h1.pageTitle= jobDetails.title
 	.singleJobContainer
 		.singleJobContent
@@ -16,15 +25,3 @@ block content
 				| Apply before it's too late: 
 				br
 				| #{jobDetails.expiryDate} 	
-
-	//- { _id: 59d677e2db51d44b29679821,
-	//- title: 'React developer for awesomesauce stuff',
-	//- body: 'Hi there. \r\n\r\nDo you know React? Sweet. Please apply now.',
-	//- jobField: 'Developer,Copywriter',
-	//- company: 'Pied Piper',
-	//- city: 'Silicon Valley',
-	//- country: 'United States',
-	//- expiryDate: 2017-10-19T00:00:00.000Z,
-	//- __v: 0,
-	//- isActive: true,
-	//- createdDate: 2017-10-05T18:20:18.562Z }
